@@ -3,6 +3,10 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 
+//db setup
+const mongoskin = require('mongoskin');
+const db = mongoskin.db('mongodb://@localhost:27017/simple_server', {safe:true})
+
 // routing
 const index = require('./routes/index');
 
