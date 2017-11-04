@@ -5,7 +5,7 @@ const app = express();
 
 //db setup
 const mongoskin = require('mongoskin');
-const db = mongoskin.db('mongodb://@localhost:27017/simple_server', {safe:true})
+const db = mongoskin.db(process.env.MONGODB_URI, {safe:true})
 
 // routing
 const index = require('./routes/index');
