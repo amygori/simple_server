@@ -1,11 +1,10 @@
-const express = require('express');
+  const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
 //db setup
 const mongoskin = require('mongoskin');
-const db = mongoskin.db('mongodb://@localhost:27017/simple_server', {safe:true})
-
+const db = mongoskin.db(process.env.MONGODB_URI, {safe:true})
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

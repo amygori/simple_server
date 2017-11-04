@@ -5,11 +5,10 @@ const app = express();
 
 //db setup
 const mongoskin = require('mongoskin');
-const db = mongoskin.db(process.env.MONGODB_URI, {safe:true})
+const db = mongoskin.db(process.env.MONGODB_URI, {safe:true});
 
 // routing
 const index = require('./routes/index');
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
